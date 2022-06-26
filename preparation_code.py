@@ -297,6 +297,10 @@ np.arange(0,1,0.1)
 
 
 # testing our models one by one
+# adding roc auc information
+from sklearn import metrics
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_curve, auc
 
 # logistic regression 
 from sklearn.linear_model import LogisticRegression
@@ -308,6 +312,19 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
+
 
 # NuSVC
 model = NuSVC(nu=0.2)
@@ -316,6 +333,19 @@ prediction = result.predict(x_test)
 
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
+
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
 
 # BernoulliNB
 
@@ -326,6 +356,19 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
+
 # lets try a different data set
 model = BernoulliNB(fit_prior=True)
 result = model.fit(x_train3,y_train)
@@ -333,6 +376,19 @@ prediction = result.predict(x_test3)
 
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test3)
+
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
 
 # AdaBoostClassifier
 
@@ -343,6 +399,19 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
+
 # PassiveAggressiveClassifier
 
 model = PassiveAggressiveClassifier(fit_intercept= True,max_iter= 2000)
@@ -352,6 +421,19 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
+
 # SGDClassifier
 model = SGDClassifier(fit_intercept= False,max_iter= 1000)
 result = model.fit(x_train,y_train)
@@ -359,6 +441,19 @@ prediction = result.predict(x_test)
 
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
+
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
 
 
 # ComplementNB
@@ -369,6 +464,22 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
+
+# little test try on the side
+
+
 from sklearn.gaussian_process import GaussianProcessClassifier
 
 model = GaussianProcessClassifier(n_jobs=-1)
@@ -378,6 +489,18 @@ prediction = result.predict(x_test)
 print(classification_report(y_test,prediction))
 generate_results(prediction,y_test,model,x_test)
 
+print(metrics.roc_auc_score(y_test, prediction))
+metrics.plot_roc_curve(model, x_test, y_test)
+
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc = 'lower right')
+plt.plot([0, 1], [0, 1],'r--')
+plt.xlim([0, 1])
+plt.ylim([0, 1])
+plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate')
+
+plt.show()
 
 
 
