@@ -13,7 +13,7 @@ We begn by cleaning and preping the data to be ready for model firring and appli
 
 With all of the necessary information and our cleaned, prepared data we thenn applied following eight supervised learning models.
 - Logistic regression (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
-- (https://scikit-learn.org/stable/modules/generated/sklearn.svm.NuSVC.html)
+- NuSVC (https://scikit-learn.org/stable/modules/generated/sklearn.svm.NuSVC.html)
 - BernoulliNB (https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html)
 - AdaBoostClassifier (https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
 - PassiveAggressiveClassifier (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.PassiveAggressiveClassifier.html)
